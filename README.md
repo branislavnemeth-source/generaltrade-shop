@@ -62,3 +62,5 @@ Detailný návod je v [README-NASADENIE.md](./README-NASADENIE.md).
 ## Licencie a značky
 
 Logá, dizajn a texty © Ing. Branislav Németh – Generaltrade. Názvy produktov tretích strán (Microsoft, Steam, EA, Ubisoft) patria ich vlastníkom.
+
+<!-- Posledný deploy: 2026-05-04 19:41 CEST -->
