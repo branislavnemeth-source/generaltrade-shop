@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-label="Generaltrade Licencie">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7d27a"/>
+      <stop offset="50%" stop-color="#d4a64a"/>
+      <stop offset="100%" stop-color="#a07614"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d3a78"/>
+      <stop offset="100%" stop-color="#0b1f48"/>
+    </linearGradient>
+  </defs>
+  <!-- Mark: shield + key -->
+  <g transform="translate(8,8)">
+    <path d="M40 4 L72 14 L72 42 C72 60 58 74 40 80 C22 74 8 60 8 42 L8 14 Z"
+          fill="url(#blue)" stroke="url(#gold)" stroke-width="2.5"/>
+    <!-- Key icon -->
+    <g fill="url(#gold)">
+      <circle cx="32" cy="38" r="10" fill="none" stroke="url(#gold)" stroke-width="3.5"/>
+      <rect x="40" y="36" width="22" height="4" rx="1.5"/>
+      <rect x="55" y="40" width="4" height="6" rx="1"/>
+      <rect x="48" y="40" width="4" height="6" rx="1"/>
+    </g>
+    <!-- G letter overlay top -->
+    <text x="40" y="26" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+          font-weight="700" font-size="14" fill="url(#gold)">G</text>
+  </g>
+  <!-- Wordmark -->
+  <g transform="translate(96,38)">
+    <text x="0" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="700"
+          fill="url(#gold)" letter-spacing="0.5">GENERALTRADE</text>
+    <text x="0" y="22" font-family="Georgia, 'Times New Roman', serif" font-size="13"
+          fill="#cdd6e8" letter-spacing="6">LICENCIE</text>
+  </g>
+</svg>

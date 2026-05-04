@@ -1,0 +1,75 @@
+# Generaltrade Licencie – Apache/Hostinger config
+# -----------------------------------------------
+
+# 1) Default index
+DirectoryIndex index.html
+
+# 2) HTTPS redirect (Hostinger zvyčajne automaticky, ale necháme istotu)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+  # Force non-www -> www? (necháme bez www, ako primárny canonical)
+  RewriteCond %{HTTP_HOST} ^www\.generaltrade\.shop$ [NC]
+  RewriteRule ^(.*)$ https://generaltrade.shop/$1 [L,R=301]
+
+  # Pekné URL bez .html (voliteľné – ak chceš /obchodne-podmienky namiesto .html)
+  # RewriteCond %{REQUEST_FILENAME} !-d
+  # RewriteCond %{REQUEST_FILENAME}.html -f
+  # RewriteRule ^([^\.]+)$ $1.html [L]
+</IfModule>
+
+# 3) Vlastná 404
+ErrorDocument 404 /404.html
+
+# 4) Komprimácia (gzip)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json image/svg+xml application/xml
+</IfModule>
+
+# 5) Cache headers
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault                              "access plus 1 month"
+  ExpiresByType text/html                     "access plus 0 seconds"
+  ExpiresByType text/css                      "access plus 1 month"
+  ExpiresByType application/javascript        "access plus 1 month"
+  ExpiresByType image/png                     "access plus 1 year"
+  ExpiresByType image/jpeg                    "access plus 1 year"
+  ExpiresByType image/svg+xml                 "access plus 1 year"
+  ExpiresByType image/x-icon                  "access plus 1 year"
+  ExpiresByType image/vnd.microsoft.icon      "access plus 1 year"
+  ExpiresByType application/font-woff2        "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Bezpečnostné hlavičky
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+  # Strict-Transport-Security – zapnúť až keď je HTTPS overené
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # Cache pre statické súbory
+  <FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg|webp|woff2)$">
+    Header set Cache-Control "public, max-age=2592000, immutable"
+  </FilesMatch>
+
+  # HTML bez agresívneho cache-u
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+# 6) Charset
+AddDefaultCharset UTF-8
+
+# 7) Skryť citlivé súbory
+<FilesMatch "(^\.|\.md$|\.zip$)">
+  Require all denied
+</FilesMatch>
