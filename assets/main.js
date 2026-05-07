@@ -1,6 +1,6 @@
 /* ===================================================================
    Generaltrade Shop — Frontend Application
-   Vanilla JS, no localStorage (sandbox-safe). Cart held in-memory only.
+   Vanilla JS, sandbox-safe. Cart held in-memory only.
    Products loaded from /data/products.json (built by scripts/import-feed.mjs).
    =================================================================== */
 
@@ -35,26 +35,15 @@
   ];
 
   // -------------------- State --------------------
-  const CART_KEY = 'gt_cart_v1';
-  function loadCartFromStorage() {
-    try {
-      const raw = window.localStorage && localStorage.getItem(CART_KEY);
-      if (!raw) return [];
-      const arr = JSON.parse(raw);
-      return Array.isArray(arr) ? arr.filter((l) => l && l.id && l.qty > 0) : [];
-    } catch (e) { return []; }
-  }
   function saveCartToStorage() {
-    try {
-      if (window.localStorage) localStorage.setItem(CART_KEY, JSON.stringify(App.cart));
-    } catch (e) { /* ignore (private mode etc.) */ }
+    // Preview-safe: cart is intentionally kept in memory only.
   }
 
   const App = window.App = {
     products: [],
     categories: [],
     meta: null,
-    cart: loadCartFromStorage(), // persisted in localStorage when available
+    cart: [],
     loaded: false,
   };
 
