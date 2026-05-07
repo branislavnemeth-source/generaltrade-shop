@@ -1,35 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-label="Generaltrade Licencie">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" role="img" aria-label="Generaltrade Shop">
   <defs>
-    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f7d27a"/>
-      <stop offset="50%" stop-color="#d4a64a"/>
-      <stop offset="100%" stop-color="#a07614"/>
-    </linearGradient>
-    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1d3a78"/>
-      <stop offset="100%" stop-color="#0b1f48"/>
+    <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7BA275"/>
+      <stop offset="100%" stop-color="#3F6B45"/>
     </linearGradient>
   </defs>
-  <!-- Mark: shield + key -->
-  <g transform="translate(8,8)">
-    <path d="M40 4 L72 14 L72 42 C72 60 58 74 40 80 C22 74 8 60 8 42 L8 14 Z"
-          fill="url(#blue)" stroke="url(#gold)" stroke-width="2.5"/>
-    <!-- Key icon -->
-    <g fill="url(#gold)">
-      <circle cx="32" cy="38" r="10" fill="none" stroke="url(#gold)" stroke-width="3.5"/>
-      <rect x="40" y="36" width="22" height="4" rx="1.5"/>
-      <rect x="55" y="40" width="4" height="6" rx="1"/>
-      <rect x="48" y="40" width="4" height="6" rx="1"/>
-    </g>
-    <!-- G letter overlay top -->
-    <text x="40" y="26" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
-          font-weight="700" font-size="14" fill="url(#gold)">G</text>
+  <g transform="translate(8 8)">
+    <circle cx="20" cy="20" r="20" fill="#F4ECDD"/>
+    <path d="M20 6c-7 4-11 9-11 16 0 5 3 9 7 11 0-7 3-12 9-16-3 8-3 14 0 18 5-1 9-6 9-13 0-8-7-15-14-16z" fill="url(#leafGrad)"/>
+    <circle cx="20" cy="20" r="19" fill="none" stroke="#3F6B45" stroke-width="0.8" opacity="0.4"/>
   </g>
-  <!-- Wordmark -->
-  <g transform="translate(96,38)">
-    <text x="0" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="700"
-          fill="url(#gold)" letter-spacing="0.5">GENERALTRADE</text>
-    <text x="0" y="22" font-family="Georgia, 'Times New Roman', serif" font-size="13"
-          fill="#cdd6e8" letter-spacing="6">LICENCIE</text>
+  <g transform="translate(58 0)" font-family="'Cormorant Garamond', Georgia, serif">
+    <text x="0" y="26" font-size="22" font-weight="600" fill="#2A2118" letter-spacing="0.5">Generaltrade</text>
+    <text x="0" y="46" font-size="11" font-weight="500" fill="#7B6A52" letter-spacing="3" font-family="'Inter', system-ui, sans-serif" text-transform="uppercase">PRÍRODNÁ KOZMETIKA</text>
   </g>
 </svg>

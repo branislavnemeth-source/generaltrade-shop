@@ -1,16 +1,8 @@
-# OS
+node_modules/
 .DS_Store
-Thumbs.db
-
-# Editors
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Logs
 *.log
-
-# Lokálne konfigurácie
 .env
 .env.local
+.tmp/
+.vscode/
+.idea/

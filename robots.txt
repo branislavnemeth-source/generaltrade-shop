@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /assets/og-image.svg
+Disallow: /data/
+Disallow: /scripts/
 
 Sitemap: https://generaltrade.shop/sitemap.xml

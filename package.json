@@ -1,0 +1,21 @@
+{
+  "name": "generaltrade-shop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Generaltrade Shop — slovenský e-shop s prírodnou kozmetikou. Statický web pre Hostinger, dáta importované z Panakeia.sk Google Merchant feedu.",
+  "scripts": {
+    "feed": "node scripts/import-feed.mjs",
+    "feed:local": "node scripts/import-feed.mjs --source ./tmp/feed.xml",
+    "pages": "node scripts/build-pages.mjs",
+    "sitemap": "node scripts/build-sitemap.mjs",
+    "build": "node scripts/import-feed.mjs && node scripts/build-pages.mjs && node scripts/build-sitemap.mjs",
+    "lint": "node -e \"console.log('No lint configured. Static site only.')\"",
+    "test": "node -e \"const p=require('./data/products.json');console.log('products',p.length);if(!p.length)process.exit(1);\"",
+    "dev": "npx --yes serve@latest -p 4173 ."
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}
