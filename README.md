@@ -83,7 +83,7 @@ SSL certifikát Hostinger generuje automaticky cez **Let's Encrypt**. Po nasaden
 
 ### E-mail
 
-Vytvorte schránku `info@generaltrade.shop` cez **Hostinger → Emails**. Tento e-mail je použitý:
+Použitá kontaktná schránka je `postmaster@generaltrade.sk`. Ak chcete používať schránku priamo na doméne `generaltrade.shop`, vytvorte ju cez **Hostinger → Emails** a upravte `SITE.email` v `scripts/build-pages.mjs`.
 - v päte stránok,
 - v právnych dokumentoch (kontakt, reklamácie, GDPR),
 - v pokladni pri inštrukciách.
@@ -117,7 +117,7 @@ V pokladni a v dokumente *Doprava a platba* sa pre platbu cez Revolut zobrazujú
 - Banka: Revolut Bank UAB, Konstitucijos ave. 21B, 08130 Vilnius, Lithuania
 - Korešpondenčná banka (BIC): `CHASDEFX`
 
-Bankový prevod alebo Revolut sú aktívne. **Platba kartou** je v stave *pripravujeme* — aktivuje sa po nasadení platobnej brány (Stripe/GP Webpay/Besteron). Súbor `assets/main.js` má v poli `PAYMENT_METHODS` flag `ready: false` pre kartu, aby sa nedala vybrať. Po nasadení brány nastavte `ready: true` a doplňte príslušnú integráciu.
+Bankový prevod, Revolut aj **platba kartou** sú v objednávkovom formulári aktívne. Bez API kľúčov konkrétneho poskytovateľa však web zatiaľ nevykonáva automatickú online autorizáciu karty; karta je pripravená pre platobný link alebo doplnenie brány typu Stripe / GP Webpay / Besteron.
 
 ---
 
@@ -129,8 +129,8 @@ Pred žiadosťou o AdSense:
 - [ ] Vyplnené stránky **O nás**, **Kontakt**, **Obchodné podmienky**, **Reklamačný poriadok**, **Odstúpenie od zmluvy**, **Ochrana osobných údajov**, **Cookies**, **FAQ**, **Doprava a platba** — všetky sú generované v tomto repe.
 - [ ] Sitemap nasadený a odoslaný v **Google Search Console**.
 - [ ] `robots.txt` povoľuje indexáciu.
-- [ ] Cookie banner ukazuje informáciu o cookies (aktuálne sú aktívne len technické).
-- [ ] Pred zapnutím AdSense nasaďte **CMP (Consent Management Platform)** a **Google Consent Mode v2** (pre EHP povinné).
+- [x] Cookie banner je zapnutý ako základný CMP režim s voľbou „iba nevyhnutné“ / „súhlasím so všetkým“.
+- [x] Google Consent Mode v2 je inicializovaný s predvoleným odmietnutím reklamného a analytického súhlasu, súhlasy sa aktualizujú až po voľbe používateľa.
 - [ ] V `ads.txt` doplňte riadok publishera po schválení.
 - [ ] Privacy / Cookies odkazujú na:
   - <https://support.google.com/adsense/answer/1348695?hl=sk>
@@ -158,10 +158,10 @@ Zmeny robte v `scripts/build-pages.mjs` (sú tam ako šablónové reťazce) a re
 
 ## Ďalšie kroky / TODO
 
-- [ ] Aktivácia platobnej brány (Stripe / GP Webpay) → odblokovať `card` v `PAYMENT_METHODS`.
+- [x] Karta je odblokovaná v `PAYMENT_METHODS`; doplňte API/redirect integráciu konkrétnej platobnej brány pre automatické spracovanie.
 - [ ] Nasadenie e-mailového odosielača objednávok (SMTP) — momentálne pokladňa zobrazí inštrukcie, neodosiela e-mail.
-- [ ] CMP banner pre EHP + Google Consent Mode v2 pred žiadosťou o AdSense.
+- [x] Základný CMP banner pre EHP + Google Consent Mode v2.
 - [ ] Cron / GitHub Action pre automatický `npm run feed && commit`.
 - [ ] Pridanie vlastných produktových fotiek (zatiaľ sú obrázky linkované z CDN dodávateľa).
 - [ ] Google Search Console + sitemap submission.
-- [ ] Telefónne číslo doplniť do `scripts/build-pages.mjs#SITE.phone`.
+- [x] Telefónne číslo doplnené: `+421 903 760 844`.

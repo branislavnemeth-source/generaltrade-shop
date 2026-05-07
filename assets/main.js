@@ -29,8 +29,8 @@
     {
       id: 'card',
       title: 'Platba kartou',
-      desc: 'Pripravujeme — bude dostupné po aktivácii platobnej brány.',
-      ready: false,
+      desc: 'Platba kartou cez aktivovanú platobnú bránu alebo platobný link po odoslaní objednávky.',
+      ready: true,
     },
   ];
 
@@ -700,7 +700,7 @@
           <p>Platobné údaje na bankový prevod Vám zašleme do 24 hodín na e-mail. Suma na úhradu: <strong>${formatPrice(subtotal + ship)}</strong>, variabilný symbol: <strong>${orderId}</strong>.</p>
           <p class="text-small text-muted">Pre rýchlejšie spracovanie môžete použiť aj možnosť Revolut.</p>`;
       } else {
-        payBox.innerHTML = `<h3>Platba kartou</h3><p>Platba kartou bude dostupná po aktivácii platobnej brány. Prosím, kontaktujte nás pre dokončenie objednávky alebo zvoľte iný spôsob.</p>`;
+        payBox.innerHTML = `<h3>Platba kartou</h3><p>Objednávka bola zaevidovaná so spôsobom platby kartou. Úhradu dokončíte cez aktivovanú platobnú bránu alebo platobný link po potvrdení objednávky. Ak sa platobný link nezobrazí automaticky, kontaktujte nás a uveďte číslo objednávky <strong>${orderId}</strong>.</p>`;
       }
       card.appendChild(payBox);
 
@@ -739,14 +739,38 @@
     return wrap;
   }
 
-  // -------------------- Cookie banner (session only) --------------------
+  // -------------------- CMP cookie banner + Google Consent Mode v2 --------------------
+  function getCookie(name) {
+    return document.cookie.split('; ').find((row) => row.startsWith(name + '='))?.split('=')[1] || '';
+  }
+  function setCookie(name, value, days) {
+    const maxAge = days * 24 * 60 * 60;
+    document.cookie = `${name}=${value}; Max-Age=${maxAge}; Path=/; SameSite=Lax; Secure`;
+  }
+  function updateConsent(mode) {
+    const granted = mode === 'all';
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        ad_storage: granted ? 'granted' : 'denied',
+        ad_user_data: granted ? 'granted' : 'denied',
+        ad_personalization: granted ? 'granted' : 'denied',
+        analytics_storage: granted ? 'granted' : 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+      });
+    }
+  }
   function initCookieBanner() {
-    if (window.__gtCookieDismissed) return;
+    const saved = getCookie('gt_cmp');
+    if (saved) {
+      updateConsent(saved === 'all' ? 'all' : 'essential');
+      return;
+    }
     const b = el('div', { class: 'cookie-banner show', id: 'cookie-banner' });
-    b.appendChild(el('p', { html: 'Používame technické súbory cookies, ktoré sú nevyhnutné pre fungovanie e-shopu. Analytické a reklamné cookies používame iba s Vaším súhlasom. Viac v <a href="cookies.html">zásadách cookies</a>.' }));
+    b.appendChild(el('p', { html: 'Používame technické cookies pre fungovanie e-shopu. Analytické a reklamné cookies pre Google služby/AdSense zapneme iba po Vašom súhlase cez Consent Mode v2. Viac v <a href="cookies.html">zásadách cookies</a>.' }));
     const acts = el('div', { class: 'actions' });
-    acts.appendChild(el('button', { class: 'btn btn-secondary btn-sm', type: 'button', text: 'Iba nevyhnutné', onclick: () => { window.__gtCookieDismissed = true; b.remove(); } }));
-    acts.appendChild(el('button', { class: 'btn btn-primary btn-sm', type: 'button', text: 'Súhlasím', onclick: () => { window.__gtCookieDismissed = true; b.remove(); } }));
+    acts.appendChild(el('button', { class: 'btn btn-secondary btn-sm', type: 'button', text: 'Iba nevyhnutné', onclick: () => { setCookie('gt_cmp', 'essential', 180); updateConsent('essential'); b.remove(); } }));
+    acts.appendChild(el('button', { class: 'btn btn-primary btn-sm', type: 'button', text: 'Súhlasím so všetkým', onclick: () => { setCookie('gt_cmp', 'all', 180); updateConsent('all'); b.remove(); } }));
     b.appendChild(acts);
     document.body.appendChild(b);
   }

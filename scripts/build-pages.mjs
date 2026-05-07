@@ -15,8 +15,8 @@ const SITE = {
   name: 'Generaltrade Shop',
   tagline: 'Prírodná kozmetika a wellness',
   domain: 'https://generaltrade.shop',
-  email: 'info@generaltrade.shop',
-  phone: '+421 XXX XXX XXX', // configure on Hostinger
+  email: 'postmaster@generaltrade.sk',
+  phone: '+421 903 760 844',
   business: {
     company: 'Ing. Branislav Németh – Generaltrade',
     ico: '51487446',
@@ -65,6 +65,19 @@ function head(title, description, canonical) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="assets/styles.css"/>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      functionality_storage: 'granted',
+      security_storage: 'granted',
+      wait_for_update: 500
+    });
+  </script>
   <script defer src="assets/main.js"></script>
 </head>
 <body>
@@ -443,7 +456,7 @@ page('kontakt.html',
 // DOPRAVA A PLATBA
 page('doprava-platba.html',
   'Doprava a platba',
-  'Spôsoby dopravy a platby v Generaltrade Shop. Doprava zdarma nad 60 €. Revolut, bankový prevod, platba kartou pripravujeme.',
+  'Spôsoby dopravy a platby v Generaltrade Shop. Doprava zdarma nad 60 €. Revolut, bankový prevod a platba kartou.',
 `<section class="section">
   <div class="container prose">
     <p class="eyebrow">Doručenie</p>
@@ -467,7 +480,7 @@ page('doprava-platba.html',
       <tbody>
         <tr><td>Revolut (IBAN)</td><td>Aktívna</td><td>Platba na Revolut účet, údaje obdržíte po objednávke</td></tr>
         <tr><td>Bankový prevod</td><td>Aktívna</td><td>SEPA prevod na účet, platobné údaje zašleme e-mailom</td></tr>
-        <tr><td>Platba kartou online</td><td>Pripravujeme</td><td>Bude dostupná po aktivácii platobnej brány</td></tr>
+        <tr><td>Platba kartou online</td><td>Aktívna v objednávke</td><td>Po odoslaní objednávky zobrazíme pokyny k úhrade kartou cez aktivovanú platobnú bránu / platobný link</td></tr>
       </tbody>
     </table>
 
@@ -527,7 +540,7 @@ page('obchodne-podmienky.html',
     <h2>3. Cena a platobné podmienky</h2>
     <p>Ceny uvedené v internetovom obchode sú konečné, vrátane DPH (ak sa uplatňuje). K cene tovaru sa pripočítava cena za prepravu podľa zvoleného spôsobu doručenia (viď stránka <a href="doprava-platba.html">Doprava a platba</a>).</p>
     <p>Pri objednávkach nad 60 € s DPH je doprava zdarma. Predávajúci nie je platcom DPH (ak je tomu inak, je to vždy uvedené na faktúre).</p>
-    <p>Akceptované spôsoby platby: Revolut na uvedený IBAN, štandardný bankový prevod. Platba kartou online je v príprave a aktivuje sa po nasadení platobnej brány.</p>
+    <p>Akceptované spôsoby platby: Revolut na uvedený IBAN, štandardný bankový prevod a platba kartou online cez aktivovanú platobnú bránu alebo platobný link.</p>
 
     <h2>4. Dodanie tovaru</h2>
     <p>Tovar predávajúceho je expedovaný z externého skladu partnera. Štandardná lehota expedície je 2–5 pracovných dní od pripísania platby na účet predávajúceho. Doručenie kuriérom GLS prebieha 1–3 pracovné dni od expedície, doručenie cez Zásielkovňu podobne.</p>
@@ -700,7 +713,7 @@ page('ochrana-osobnych-udajov.html',
 
     <h2>5. Cookies a analytické nástroje</h2>
     <p>Web používa technické súbory cookies nevyhnutné pre fungovanie. Analytické a reklamné cookies (vrátane Google AdSense, Google Analytics) používame iba s Vaším súhlasom. Podrobné informácie nájdete v <a href="cookies.html">zásadách cookies</a>.</p>
-    <p>Pre používateľov v EHP odporúčame implementovať <strong>Google Consent Mode v2</strong> a CMP (Consent Management Platform) pred aktivovaním reklamy.</p>
+    <p>Na webe je zapnutý CMP cookie banner so základným nastavením <strong>Google Consent Mode v2</strong>: reklamné a analytické súhlasy sú predvolene zamietnuté a aktivujú sa až po voľbe návštevníka.</p>
 
     <h2>6. Práva dotknutej osoby</h2>
     <ul>
@@ -748,7 +761,7 @@ page('cookies.html',
         <tr><td>Reklamné</td><td>Personalizovaná reklama (Google AdSense, retargeting)</td><td>do 13 mesiacov</td><td>Vyžaduje sa</td></tr>
       </tbody>
     </table>
-    <p class="text-small text-muted">Generaltrade Shop aktuálne nepoužíva analytické ani reklamné cookies, kým nebude nasadený plnohodnotný CMP a Google Consent Mode v2. V banneri Vás budeme vždy informovať pred aktivovaním ktorejkoľvek nadštandardnej kategórie.</p>
+    <p class="text-small text-muted">Generaltrade Shop používa CMP cookie banner so základným režimom Google Consent Mode v2. Technické cookies sú potrebné pre fungovanie webu; analytické a reklamné cookies sa aktivujú iba po udelení súhlasu v banneri.</p>
 
     <h2>3. Reklama tretích strán (Google AdSense)</h2>
     <p>Po aktivácii Google AdSense bude platiť: tretie strany (vrátane Google) používajú cookies na zobrazovanie reklám založených na predchádzajúcich návštevách tejto a iných stránok. Reklamné cookies Google umožňujú spoločnosti Google a jej partnerom zobrazovať personalizované reklamy.</p>
@@ -765,7 +778,7 @@ page('cookies.html',
     </ul>
 
     <h2>5. Odvolanie súhlasu</h2>
-    <p>Súhlas s analytickými a reklamnými cookies môžete kedykoľvek odvolať vymazaním cookies v prehliadači, alebo cez CMP banner po jeho nasadení.</p>
+    <p>Súhlas s analytickými a reklamnými cookies môžete kedykoľvek odvolať vymazaním cookies v prehliadači; pri ďalšej návšteve sa banner zobrazí znova. Po doplnení plnohodnotného CMP nástroja bude možné súhlas meniť aj cez trvalé centrum nastavení.</p>
   </div>
 </section>
 `);
@@ -786,7 +799,7 @@ page('faq.html',
     <p>Spolupracujeme so slovenským dodávateľom prírodnej kozmetiky. Tovar držíme u neho, čím vieme ponúkať široký výber bez zbytočných nákladov na vlastné skladovanie.</p>
 
     <h2>Aké spôsoby platby akceptujete?</h2>
-    <p>Aktuálne Revolut (na IBAN) a štandardný bankový prevod. Platba kartou online je v príprave a aktivuje sa po nasadení platobnej brány.</p>
+    <p>Aktuálne Revolut (na IBAN), štandardný bankový prevod a platba kartou cez aktivovanú platobnú bránu alebo platobný link.</p>
 
     <h2>Je možné platiť na dobierku?</h2>
     <p>V tejto chvíli platbu na dobierku neponúkame. Ak by ste mali záujem o iný spôsob, kontaktujte nás e-mailom — vieme nájsť individuálne riešenie.</p>
