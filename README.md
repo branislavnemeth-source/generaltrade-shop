@@ -42,6 +42,10 @@ Po každej zmene feedu (prepojenie s `cron`-om alebo manuálne) spusťte `npm ru
 `final = round(feed_price * 1.40, 2)`  — komentované v `scripts/import-feed.mjs#applyMarkup`.
 Zákazník v UI vidí len konečnú cenu (vrátane DPH, ak relevantné). Marža je zdokumentovaná v tomto README, nikdy nie v zákazníckom UI.
 
+### Produktové fotografie
+
+Každý produkt používa **skutočnú fotografiu z dodávateľského feedu** — pole `g:image_link` z RSS Google Merchant feedu (CDN myshoptet.com). URL sa importujú do `data/products.json#image` a renderujú v katalógu, detaile produktu aj v košíku. Generované/placeholder obrázky sa nikdy nepoužívajú ako primárne — slúžia výhradne ako fallback (písmenková mozaika), ak sa konkrétna URL nepodarí načítať. Pri pravidelnom `npm run feed` sa fotografie automaticky aktualizujú spolu s ostatnými údajmi.
+
 ### Externý sklad
 
 Tovar sa fyzicky nachádza u nášho dodávateľa (Panakeia). Storefront komunikuje:
