@@ -90,7 +90,7 @@ function header() {
   <div class="header-top">
     <div class="container">
       <span>Doprava ZDARMA nad 60 € · Skladom z externého skladu · Expedícia 2–5 dní</span>
-      <span><a href="kontakt.html">${SITE.email}</a></span>
+      <span><a href="kontakt.html">${SITE.email}</a> · <a href="tel:${SITE.phone.replaceAll(' ', '')}">${SITE.phone}</a></span>
     </div>
   </div>
   <div class="container">
@@ -413,7 +413,8 @@ page('o-nas.html',
     ${SITE.business.address}<br>
     IČO: ${SITE.business.ico}<br>
     ${SITE.business.register}</p>
-    <p>E-mail: <a href="mailto:${SITE.email}">${SITE.email}</a></p>
+    <p>E-mail: <a href="mailto:${SITE.email}">${SITE.email}</a><br>
+    Telefón: <a href="tel:${SITE.phone.replaceAll(' ', '')}">${SITE.phone}</a></p>
     <p><a class="btn btn-primary" href="katalog.html">Prejsť do katalógu</a></p>
   </div>
 </section>
@@ -437,6 +438,7 @@ page('kontakt.html',
         IČO: ${SITE.business.ico}<br>
         ${SITE.business.register}</p>
         <p>E-mail: <a href="mailto:${SITE.email}">${SITE.email}</a><br>
+        Telefón: <a href="tel:${SITE.phone.replaceAll(' ', '')}">${SITE.phone}</a><br>
         Web: <a href="${SITE.domain}">${SITE.domain.replace('https://','')}</a></p>
         <p class="text-small text-muted">Nie sme platcami DPH (uvedené k dátumu prevádzky stránky — overte na faktúre).</p>
       </div>
@@ -444,7 +446,7 @@ page('kontakt.html',
         <h3>Otváracie hodiny</h3>
         <p>E-shop je otvorený nepretržite. Spracovanie objednávok prebieha v pracovných dňoch.</p>
         <h4 style="margin-top:18px">Osobné prevzatie</h4>
-        <p>Osobné prevzatie na adrese ${SITE.business.address} je možné <strong>po dohode</strong>. Kontaktujte nás vopred e-mailom.</p>
+        <p>Osobné prevzatie na adrese ${SITE.business.address} je možné <strong>po dohode</strong>. Kontaktujte nás vopred e-mailom alebo telefonicky.</p>
       </div>
     </div>
 
