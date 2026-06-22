@@ -34,9 +34,8 @@
     },
   ];
 
-  // Endpoint platobnej brány (Netlify Function). Po nasadení Netlify
-  // sem doplňte reálnu doménu site, napr. https://generaltrade.netlify.app/api/create-checkout
-  const CHECKOUT_ENDPOINT = 'https://generaltrade.netlify.app/api/create-checkout';
+  // Endpoint platobnej brány (Netlify Function) — site gilded-tartufo-a30f31.
+  const CHECKOUT_ENDPOINT = 'https://gilded-tartufo-a30f31.netlify.app/api/create-checkout';
 
   // -------------------- State --------------------
   const CART_STORAGE_KEY = 'gt_cart';
