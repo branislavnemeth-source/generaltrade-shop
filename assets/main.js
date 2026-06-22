@@ -196,6 +196,18 @@
       meta.appendChild(el('span', { class: 'text-tiny text-muted', text: 'Externý sklad' }));
     }
     body.appendChild(meta);
+    if (p.affiliate_url) {
+      const affBtn = el('a', {
+        class: 'btn btn-secondary btn-sm btn-block aff-btn',
+        href: p.affiliate_url,
+        target: '_blank',
+        rel: 'nofollow sponsored noopener',
+        text: 'Kúpiť na Panakeia',
+        style: 'margin-top:8px',
+        onclick: (e) => { e.stopPropagation(); }
+      });
+      body.appendChild(affBtn);
+    }
     card.appendChild(imgWrap);
     card.appendChild(body);
 
@@ -416,6 +428,16 @@
       const addBtn = el('button', { class: 'btn btn-primary btn-lg', type: 'button', text: 'Pridať do košíka' });
       addBtn.onclick = () => cartAdd(p.id, parseInt(input.value || '1', 10));
       ctaRow.appendChild(addBtn);
+      if (p.affiliate_url) {
+        const affBtn = el('a', {
+          class: 'btn btn-secondary btn-lg aff-btn',
+          href: p.affiliate_url,
+          target: '_blank',
+          rel: 'nofollow sponsored noopener',
+          text: 'Kúpiť na Panakeia'
+        });
+        ctaRow.appendChild(affBtn);
+      }
       info.appendChild(ctaRow);
     } else {
       info.appendChild(el('div', { class: 'notice warn', html: '<strong>Aktuálne nedostupné.</strong> Pre informácie o opätovnom naskladnení nás kontaktujte.' }));

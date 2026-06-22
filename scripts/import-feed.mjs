@@ -25,6 +25,13 @@ const DATA_DIR = join(ROOT, 'data');
 const FEED_URL = 'https://www.panakeia.sk/google/export/products.xml';
 const MARKUP = 1.40; // +40 %
 
+// Dognet affiliate deep link — kanál Generaltrade.sk (ID 18449)
+const DOGNET_CHID = 'Y9FA0bsH';
+function buildAffiliateUrl(targetUrl) {
+  if (!targetUrl) return null;
+  return `https://go.dognet.com/?chid=${DOGNET_CHID}&url=${encodeURIComponent(targetUrl)}`;
+}
+
 const args = process.argv.slice(2);
 const sourceArg = args.indexOf('--source');
 const localSource = sourceArg >= 0 ? args[sourceArg + 1] : null;
@@ -185,6 +192,7 @@ function parseItem(block) {
     image,
     additional_images: additionalImages,
     feed_link: link, // INTERNAL ONLY — not shown to customers
+    affiliate_url: buildAffiliateUrl(link), // Dognet deep link → panakeia.sk
     feed_shipping: feedShipping,
   };
 }

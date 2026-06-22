@@ -6,8 +6,8 @@
       "Zdravie",
       "Výživové doplnky"
     ],
-    "count": 71,
-    "in_stock": 23
+    "count": 54,
+    "in_stock": 22
   },
   {
     "id": "kava-caj",
@@ -18,17 +18,18 @@
       "Nápoje",
       "Káva, čaj"
     ],
-    "count": 32,
-    "in_stock": 18
+    "count": 30,
+    "in_stock": 27
   },
   {
-    "id": "panalux-luxusna-prirodna-kozmetika",
-    "name": "PANALUX® - luxusná prírodná kozmetika",
+    "id": "bylinne-kremy-balzamy",
+    "name": "Bylinné krémy, balzamy",
     "path": [
-      "PANALUX® - luxusná prírodná kozmetika"
+      "Zdravie",
+      "Bylinné krémy, balzamy"
     ],
-    "count": 27,
-    "in_stock": 27
+    "count": 25,
+    "in_stock": 22
   },
   {
     "id": "tinktury-bylinne-kvapky-tinc2",
@@ -38,7 +39,7 @@
       "Výživové doplnky",
       "Tinktúry (bylinné kvapky) - TINC2"
     ],
-    "count": 26,
+    "count": 25,
     "in_stock": 24
   },
   {
@@ -48,22 +49,14 @@
       "Kozmetické doplnky"
     ],
     "count": 24,
-    "in_stock": 5
+    "in_stock": 4
   },
   {
-    "id": "bylinne-kremy-balzamy",
-    "name": "Bylinné krémy, balzamy",
+    "id": "panalux-luxusna-prirodna-kozmetika",
+    "name": "PANALUX® - luxusná prírodná kozmetika",
     "path": [
-      "Zdravie",
-      "Bylinné krémy, balzamy"
+      "PANALUX® - luxusná prírodná kozmetika"
     ],
-    "count": 24,
-    "in_stock": 19
-  },
-  {
-    "id": "ostatne",
-    "name": "Ostatné",
-    "path": [],
     "count": 23,
     "in_stock": 21
   },
@@ -76,7 +69,7 @@
       "Altajské bio oleje"
     ],
     "count": 22,
-    "in_stock": 7
+    "in_stock": 16
   },
   {
     "id": "kozmeticke-kremy-gely-na-nohy-cievy-zily",
@@ -87,7 +80,7 @@
       "Kozmetické krémy,gély na nohy, cievy, žily"
     ],
     "count": 22,
-    "in_stock": 17
+    "in_stock": 18
   },
   {
     "id": "pletove-sera",
@@ -100,33 +93,11 @@
     "in_stock": 20
   },
   {
-    "id": "sprchove-gely",
-    "name": "Sprchové gély",
-    "path": [
-      "Telová kozmetika",
-      "Sprchové gély"
-    ],
+    "id": "ostatne",
+    "name": "Ostatné",
+    "path": [],
     "count": 19,
     "in_stock": 14
-  },
-  {
-    "id": "parfemy",
-    "name": "Parfémy",
-    "path": [
-      "Telová kozmetika",
-      "Parfémy"
-    ],
-    "count": 19,
-    "in_stock": 17
-  },
-  {
-    "id": "licenie",
-    "name": "Líčenie",
-    "path": [
-      "Líčenie"
-    ],
-    "count": 19,
-    "in_stock": 19
   },
   {
     "id": "vzorky-dennych-kremov",
@@ -137,7 +108,17 @@
       "Vzorky denných krémov"
     ],
     "count": 19,
-    "in_stock": 9
+    "in_stock": 8
+  },
+  {
+    "id": "sprchove-gely",
+    "name": "Sprchové gély",
+    "path": [
+      "Telová kozmetika",
+      "Sprchové gély"
+    ],
+    "count": 18,
+    "in_stock": 16
   },
   {
     "id": "balzamy-a-kremy-na-klby-svaly-a-chrticu",
@@ -148,7 +129,38 @@
       "Balzamy a krémy na kĺby, svaly a chrticu."
     ],
     "count": 18,
-    "in_stock": 13
+    "in_stock": 15
+  },
+  {
+    "id": "parfemy",
+    "name": "Parfémy",
+    "path": [
+      "Telová kozmetika",
+      "Parfémy"
+    ],
+    "count": 17,
+    "in_stock": 10
+  },
+  {
+    "id": "licenie",
+    "name": "Líčenie",
+    "path": [
+      "Líčenie"
+    ],
+    "count": 17,
+    "in_stock": 12
+  },
+  {
+    "id": "lipozomalne-vitaminy",
+    "name": "Lipozomálne vitamíny",
+    "path": [
+      "Zdravie",
+      "Výživové doplnky",
+      "Vitamíny a doplnky stravy",
+      "Lipozomálne vitamíny"
+    ],
+    "count": 17,
+    "in_stock": 16
   },
   {
     "id": "vzorky-parfemov",
@@ -158,8 +170,19 @@
       "Parfémy",
       "Vzorky parfémov"
     ],
-    "count": 15,
-    "in_stock": 9
+    "count": 16,
+    "in_stock": 15
+  },
+  {
+    "id": "vitaminy-a-doplnky-stravy",
+    "name": "Vitamíny a doplnky stravy",
+    "path": [
+      "Zdravie",
+      "Výživové doplnky",
+      "Vitamíny a doplnky stravy"
+    ],
+    "count": 14,
+    "in_stock": 10
   },
   {
     "id": "denne-kremy",
@@ -168,8 +191,8 @@
       "Pleťová kozmetika",
       "Denné krémy"
     ],
-    "count": 13,
-    "in_stock": 12
+    "count": 12,
+    "in_stock": 11
   },
   {
     "id": "aktivatory-opalenia",
@@ -179,17 +202,7 @@
       "Aktivátory opálenia"
     ],
     "count": 12,
-    "in_stock": 5
-  },
-  {
-    "id": "telove-oleje",
-    "name": "Telové oleje",
-    "path": [
-      "Telová kozmetika",
-      "Telové oleje"
-    ],
-    "count": 12,
-    "in_stock": 9
+    "in_stock": 6
   },
   {
     "id": "oleje-vyzivne-v-kapsuliach",
@@ -200,7 +213,7 @@
       "Oleje výživné v kapsuliach"
     ],
     "count": 11,
-    "in_stock": 2
+    "in_stock": 7
   },
   {
     "id": "vonne-vosky-do-aromalamp",
@@ -213,11 +226,21 @@
     "in_stock": 0
   },
   {
-    "id": "prirodne-mydla",
-    "name": "Prírodné mydlá",
+    "id": "telove-oleje",
+    "name": "Telové oleje",
     "path": [
       "Telová kozmetika",
-      "Prírodné mydlá"
+      "Telové oleje"
+    ],
+    "count": 8,
+    "in_stock": 4
+  },
+  {
+    "id": "odlicenie-a-cistenie-pleti",
+    "name": "Odličenie a čistenie pleti",
+    "path": [
+      "Pleťová kozmetika",
+      "Odličenie a čistenie pleti"
     ],
     "count": 8,
     "in_stock": 8
@@ -242,16 +265,6 @@
     "in_stock": 2
   },
   {
-    "id": "telove-mlieka",
-    "name": "Telové mlieka",
-    "path": [
-      "Telová kozmetika",
-      "Telové mlieka"
-    ],
-    "count": 7,
-    "in_stock": 7
-  },
-  {
     "id": "tonika",
     "name": "Toniká",
     "path": [
@@ -259,7 +272,7 @@
       "Toniká"
     ],
     "count": 7,
-    "in_stock": 7
+    "in_stock": 6
   },
   {
     "id": "huby-v-kapsuliach",
@@ -270,6 +283,16 @@
       "Huby v kapsuliach"
     ],
     "count": 7,
+    "in_stock": 5
+  },
+  {
+    "id": "tuhe-sampony-na-vlasy",
+    "name": "Tuhé šampóny na vlasy",
+    "path": [
+      "Vlasová kozmetika",
+      "Tuhé šampóny na vlasy"
+    ],
+    "count": 6,
     "in_stock": 4
   },
   {
@@ -280,16 +303,6 @@
       "Výživové doplnky",
       "Tinktúry (bylinné kvapky) - TINC2",
       "Kvapky pre ženy"
-    ],
-    "count": 6,
-    "in_stock": 6
-  },
-  {
-    "id": "tuhe-sampony-na-vlasy",
-    "name": "Tuhé šampóny na vlasy",
-    "path": [
-      "Vlasová kozmetika",
-      "Tuhé šampóny na vlasy"
     ],
     "count": 6,
     "in_stock": 6
@@ -313,36 +326,6 @@
       "Kvetové vody"
     ],
     "count": 6,
-    "in_stock": 6
-  },
-  {
-    "id": "balzamy-na-pery",
-    "name": "Balzamy na pery",
-    "path": [
-      "Telová kozmetika",
-      "Balzamy na pery"
-    ],
-    "count": 6,
-    "in_stock": 6
-  },
-  {
-    "id": "odlicenie-a-cistenie-pleti",
-    "name": "Odličenie a čistenie pleti",
-    "path": [
-      "Pleťová kozmetika",
-      "Odličenie a čistenie pleti"
-    ],
-    "count": 6,
-    "in_stock": 6
-  },
-  {
-    "id": "prirodne-deodoranty",
-    "name": "Prírodné deodoranty",
-    "path": [
-      "Telová kozmetika",
-      "Prírodné deodoranty"
-    ],
-    "count": 5,
     "in_stock": 5
   },
   {
@@ -352,6 +335,39 @@
       "Vlasová kozmetika",
       "Prírodné šampóny",
       "Šampóny"
+    ],
+    "count": 6,
+    "in_stock": 6
+  },
+  {
+    "id": "pripravky-na-bradavice",
+    "name": "Prípravky na bradavice",
+    "path": [
+      "Zdravie",
+      "Bylinné krémy, balzamy",
+      "Prípravky na bradavice"
+    ],
+    "count": 6,
+    "in_stock": 4
+  },
+  {
+    "id": "tinktury-na-pecen-zlcnik",
+    "name": "Tinktúry na pečeň, žlčník",
+    "path": [
+      "Zdravie",
+      "Výživové doplnky",
+      "Tinktúry (bylinné kvapky) - TINC2",
+      "Tinktúry na pečeň, žlčník"
+    ],
+    "count": 5,
+    "in_stock": 5
+  },
+  {
+    "id": "prirodne-mydla",
+    "name": "Prírodné mydlá",
+    "path": [
+      "Telová kozmetika",
+      "Prírodné mydlá"
     ],
     "count": 5,
     "in_stock": 5
@@ -367,37 +383,45 @@
     "in_stock": 0
   },
   {
-    "id": "vitaminy-a-doplnky-stravy",
-    "name": "Vitamíny a doplnky stravy",
+    "id": "telove-mlieka",
+    "name": "Telové mlieka",
     "path": [
-      "Zdravie",
-      "Výživové doplnky",
-      "Vitamíny a doplnky stravy"
+      "Telová kozmetika",
+      "Telové mlieka"
+    ],
+    "count": 5,
+    "in_stock": 5
+  },
+  {
+    "id": "telove-masla",
+    "name": "Telové maslá",
+    "path": [
+      "Telová kozmetika",
+      "Telové maslá"
     ],
     "count": 5,
     "in_stock": 0
   },
   {
-    "id": "kupelove-masla",
-    "name": "Kúpeľové maslá",
-    "path": [
-      "Telová kozmetika",
-      "Kúpeľové maslá"
-    ],
-    "count": 5,
-    "in_stock": 3
-  },
-  {
-    "id": "tinktury-na-pecen-zlcnik",
-    "name": "Tinktúry na pečeň, žlčník",
+    "id": "cukriky",
+    "name": "Cukríky",
     "path": [
       "Zdravie",
-      "Výživové doplnky",
-      "Tinktúry (bylinné kvapky) - TINC2",
-      "Tinktúry na pečeň, žlčník"
+      "Potraviny a nápoje",
+      "Pochutiny",
+      "Cukríky"
+    ],
+    "count": 5,
+    "in_stock": 5
+  },
+  {
+    "id": "detska-prirodna-kozmetika",
+    "name": "Detská prírodná kozmetika",
+    "path": [
+      "Detská prírodná kozmetika"
     ],
     "count": 4,
-    "in_stock": 4
+    "in_stock": 3
   },
   {
     "id": "aromaterapia",
@@ -419,11 +443,22 @@
     "in_stock": 4
   },
   {
-    "id": "azra-cosmetics-by-azra-sokira",
-    "name": "Azra Cosmetics by Azra Sokira",
+    "id": "kupelove-masla",
+    "name": "Kúpeľové maslá",
     "path": [
-      "Špeciálne edície",
-      "Azra Cosmetics by Azra Sokira"
+      "Telová kozmetika",
+      "Kúpeľové maslá"
+    ],
+    "count": 4,
+    "in_stock": 1
+  },
+  {
+    "id": "napoje",
+    "name": "Nápoje",
+    "path": [
+      "Zdravie",
+      "Potraviny a nápoje",
+      "Nápoje"
     ],
     "count": 4,
     "in_stock": 4
@@ -440,6 +475,18 @@
     "in_stock": 2
   },
   {
+    "id": "tinktury-na-stitnu-zlazu-a-lymfu",
+    "name": "Tinktúry na štítnu žľazu a lymfu",
+    "path": [
+      "Zdravie",
+      "Výživové doplnky",
+      "Tinktúry (bylinné kvapky) - TINC2",
+      "Tinktúry na štítnu žľazu a lymfu"
+    ],
+    "count": 3,
+    "in_stock": 3
+  },
+  {
     "id": "tinktury-na-srdce-a-tlak",
     "name": "Tinktúry na srdce a tlak",
     "path": [
@@ -452,17 +499,6 @@
     "in_stock": 3
   },
   {
-    "id": "caga",
-    "name": "Čaga",
-    "path": [
-      "Zdravie",
-      "Výživové doplnky",
-      "Čaga"
-    ],
-    "count": 3,
-    "in_stock": 1
-  },
-  {
     "id": "drogeria",
     "name": "Drogéria",
     "path": [
@@ -470,25 +506,6 @@
     ],
     "count": 3,
     "in_stock": 0
-  },
-  {
-    "id": "make-up",
-    "name": "Make-up",
-    "path": [
-      "Líčenie",
-      "Make-up"
-    ],
-    "count": 3,
-    "in_stock": 3
-  },
-  {
-    "id": "detska-prirodna-kozmetika",
-    "name": "Detská prírodná kozmetika",
-    "path": [
-      "Detská prírodná kozmetika"
-    ],
-    "count": 3,
-    "in_stock": 3
   },
   {
     "id": "vzorky-pripravkov-na-opalovanie",
@@ -511,27 +528,6 @@
     "in_stock": 2
   },
   {
-    "id": "telove-masla",
-    "name": "Telové maslá",
-    "path": [
-      "Telová kozmetika",
-      "Telové maslá"
-    ],
-    "count": 3,
-    "in_stock": 0
-  },
-  {
-    "id": "pripravky-na-bradavice",
-    "name": "Prípravky na bradavice",
-    "path": [
-      "Zdravie",
-      "Bylinné krémy, balzamy",
-      "Prípravky na bradavice"
-    ],
-    "count": 3,
-    "in_stock": 3
-  },
-  {
     "id": "peelingy",
     "name": "Peelingy",
     "path": [
@@ -539,7 +535,7 @@
       "Peelingy"
     ],
     "count": 3,
-    "in_stock": 0
+    "in_stock": 3
   },
   {
     "id": "oleje-na-opalovanie-s-spf",
@@ -558,30 +554,6 @@
       "Zdravie",
       "Bylinné krémy, balzamy",
       "Balzamy s včelím jedom"
-    ],
-    "count": 2,
-    "in_stock": 2
-  },
-  {
-    "id": "tinktury-na-stitnu-zlazu-a-lymfu",
-    "name": "Tinktúry na štítnu žľazu a lymfu",
-    "path": [
-      "Zdravie",
-      "Výživové doplnky",
-      "Tinktúry (bylinné kvapky) - TINC2",
-      "Tinktúry na štítnu žľazu a lymfu"
-    ],
-    "count": 2,
-    "in_stock": 2
-  },
-  {
-    "id": "tinktury-pre-lepsi-spanok",
-    "name": "Tinktúry pre lepší spánok",
-    "path": [
-      "Zdravie",
-      "Výživové doplnky",
-      "Tinktúry (bylinné kvapky) - TINC2",
-      "Tinktúry pre lepší spánok"
     ],
     "count": 2,
     "in_stock": 2
@@ -642,6 +614,27 @@
     "in_stock": 2
   },
   {
+    "id": "prirodne-deodoranty",
+    "name": "Prírodné deodoranty",
+    "path": [
+      "Telová kozmetika",
+      "Prírodné deodoranty"
+    ],
+    "count": 2,
+    "in_stock": 2
+  },
+  {
+    "id": "caga",
+    "name": "Čaga",
+    "path": [
+      "Zdravie",
+      "Výživové doplnky",
+      "Čaga"
+    ],
+    "count": 2,
+    "in_stock": 1
+  },
+  {
     "id": "sera-na-vlasy",
     "name": "Séra na vlasy",
     "path": [
@@ -650,15 +643,6 @@
     ],
     "count": 2,
     "in_stock": 2
-  },
-  {
-    "id": "telova-kozmetika",
-    "name": "Telová kozmetika",
-    "path": [
-      "Telová kozmetika"
-    ],
-    "count": 2,
-    "in_stock": 0
   },
   {
     "id": "telove-mlieka-po-opalovani",
@@ -687,7 +671,7 @@
       "Zdravie"
     ],
     "count": 2,
-    "in_stock": 1
+    "in_stock": 2
   },
   {
     "id": "nocne-kremy",
@@ -716,7 +700,7 @@
       "Prípravky na opaľovanie"
     ],
     "count": 2,
-    "in_stock": 1
+    "in_stock": 2
   },
   {
     "id": "luxusne-pletove-sera",
@@ -751,6 +735,18 @@
     "in_stock": 2
   },
   {
+    "id": "tinktury-pre-lepsi-spanok",
+    "name": "Tinktúry pre lepší spánok",
+    "path": [
+      "Zdravie",
+      "Výživové doplnky",
+      "Tinktúry (bylinné kvapky) - TINC2",
+      "Tinktúry pre lepší spánok"
+    ],
+    "count": 1,
+    "in_stock": 1
+  },
+  {
     "id": "oleje-po-opalovani",
     "name": "Oleje po opaľovaní",
     "path": [
@@ -758,7 +754,7 @@
       "Oleje po opaľovaní"
     ],
     "count": 1,
-    "in_stock": 0
+    "in_stock": 1
   },
   {
     "id": "bronzer-zvyraznovac-opalenia",
@@ -766,16 +762,6 @@
     "path": [
       "Prípravky na opaľovanie",
       "Bronzer - zvýrazňovač opálenia"
-    ],
-    "count": 1,
-    "in_stock": 1
-  },
-  {
-    "id": "edicia-stramanda",
-    "name": "Edícia ŠTRAMANDA",
-    "path": [
-      "Špeciálne edície",
-      "Edícia ŠTRAMANDA"
     ],
     "count": 1,
     "in_stock": 1
@@ -824,16 +810,6 @@
     "in_stock": 1
   },
   {
-    "id": "kremy-na-telo",
-    "name": "Krémy na telo",
-    "path": [
-      "Telová kozmetika",
-      "Krémy na telo"
-    ],
-    "count": 1,
-    "in_stock": 1
-  },
-  {
     "id": "panska-prirodna-kozmetika",
     "name": "Pánska prírodná kozmetika",
     "path": [
@@ -851,7 +827,7 @@
       "Pochutiny"
     ],
     "count": 1,
-    "in_stock": 0
+    "in_stock": 1
   },
   {
     "id": "kremy-zralocia-chrupavka",
@@ -883,7 +859,7 @@
       "Bylinné sirupy"
     ],
     "count": 1,
-    "in_stock": 0
+    "in_stock": 1
   },
   {
     "id": "edicia-pdrn",
@@ -891,16 +867,6 @@
     "path": [
       "Špeciálne edície",
       "Edícia PDRN"
-    ],
-    "count": 1,
-    "in_stock": 1
-  },
-  {
-    "id": "detska-edicia-bubacik",
-    "name": "Detská edícia BUBÁČIK",
-    "path": [
-      "Špeciálne edície",
-      "Detská edícia BUBÁČIK"
     ],
     "count": 1,
     "in_stock": 1
@@ -923,6 +889,46 @@
       "Edícia ODIN"
     ],
     "count": 1,
+    "in_stock": 1
+  },
+  {
+    "id": "kremy-na-problematicku-plet-a-pokozku-tela",
+    "name": "Krémy na problematickú pleť a pokožku tela",
+    "path": [
+      "Zdravie",
+      "Bylinné krémy, balzamy",
+      "Krémy na problematickú pleť a pokožku tela"
+    ],
+    "count": 1,
     "in_stock": 0
+  },
+  {
+    "id": "telova-kozmetika",
+    "name": "Telová kozmetika",
+    "path": [
+      "Telová kozmetika"
+    ],
+    "count": 1,
+    "in_stock": 1
+  },
+  {
+    "id": "spreje-na-opalovanie",
+    "name": "Spreje na opaľovanie",
+    "path": [
+      "Prípravky na opaľovanie",
+      "Spreje na opaľovanie"
+    ],
+    "count": 1,
+    "in_stock": 1
+  },
+  {
+    "id": "priprava-na-opalovanie",
+    "name": "Príprava na opaľovanie",
+    "path": [
+      "Prípravky na opaľovanie",
+      "Príprava na opaľovanie"
+    ],
+    "count": 1,
+    "in_stock": 1
   }
 ]
