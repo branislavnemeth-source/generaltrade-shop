@@ -7,9 +7,22 @@
 import { writeFileSync, readFileSync, mkdirSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
+
+// Cache-busting: krátky hash z obsahu súboru, pridá sa ako ?v=... k assetom
+function assetVersion(relPath) {
+  try {
+    const buf = readFileSync(join(ROOT, relPath));
+    return createHash('md5').update(buf).digest('hex').slice(0, 8);
+  } catch (e) {
+    return String(Date.now());
+  }
+}
+const CSS_VER = assetVersion('assets/styles.css');
+const JS_VER = assetVersion('assets/main.js');
 
 const SITE = {
   name: 'Generaltrade Shop',
@@ -64,7 +77,7 @@ function head(title, description, canonical) {
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="assets/styles.css"/>
+  <link rel="stylesheet" href="assets/styles.css?v=${CSS_VER}"/>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -78,7 +91,7 @@ function head(title, description, canonical) {
       wait_for_update: 500
     });
   </script>
-  <script defer src="assets/main.js"></script>
+  <script defer src="assets/main.js?v=${JS_VER}"></script>
 </head>
 <body>
   ${header()}
