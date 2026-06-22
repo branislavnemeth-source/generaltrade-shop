@@ -35,8 +35,27 @@
   ];
 
   // -------------------- State --------------------
+  const CART_STORAGE_KEY = 'gt_cart';
   function saveCartToStorage() {
-    // Preview-safe: cart is intentionally kept in memory only.
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(App.cart));
+    } catch (e) {
+      // Storage unavailable (private mode / disabled) — keep cart in memory only.
+    }
+  }
+  function loadCartFromStorage() {
+    try {
+      const raw = localStorage.getItem(CART_STORAGE_KEY);
+      if (!raw) return;
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) {
+        App.cart = parsed
+          .filter((l) => l && typeof l.id === 'string')
+          .map((l) => ({ id: l.id, qty: Math.max(1, Math.min(99, parseInt(l.qty, 10) || 1)) }));
+      }
+    } catch (e) {
+      // Ignore corrupted / unavailable storage.
+    }
   }
 
   const App = window.App = {
@@ -802,6 +821,7 @@
     const tog = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.nav');
     if (tog && nav) tog.addEventListener('click', () => nav.classList.toggle('open'));
+    loadCartFromStorage();
     refreshCartBadge();
   }
 
