@@ -29,10 +29,14 @@
     {
       id: 'card',
       title: 'Platba kartou',
-      desc: 'Platba kartou cez aktivovanú platobnú bránu alebo platobný link po odoslaní objednávky.',
+      desc: 'Bezpečná platba kartou (Visa / Mastercard) cez Stripe. Po odoslaní objednávky Vás presmerujeme na zabezpečenú platobnú bránu.',
       ready: true,
     },
   ];
+
+  // Endpoint platobnej brány (Netlify Function). Po nasadení Netlify
+  // sem doplňte reálnu doménu site, napr. https://generaltrade.netlify.app/api/create-checkout
+  const CHECKOUT_ENDPOINT = 'https://generaltrade.netlify.app/api/create-checkout';
 
   // -------------------- State --------------------
   const CART_STORAGE_KEY = 'gt_cart';
@@ -573,6 +577,30 @@
     if (!root) return;
     await loadData();
 
+    // Návrat zo Stripe Checkout (?platba=ok / ?platba=zrusena)
+    const qs = new URLSearchParams(window.location.search);
+    const platba = qs.get('platba');
+    if (platba === 'ok') {
+      const orderId = qs.get('objednavka') || (function(){ try { return sessionStorage.getItem('gt_last_order') || ''; } catch (e) { return ''; } })();
+      cartClear();
+      try { sessionStorage.removeItem('gt_last_order'); } catch (e) {}
+      root.innerHTML = '';
+      const ok = el('div', { class: 'summary', style: 'max-width:640px;margin:0 auto;position:static;text-align:center' });
+      ok.appendChild(el('h2', { text: 'Ďakujeme, platba prebehla úspešne!' }));
+      ok.appendChild(el('p', { html: orderId ? `Objednávku <strong>${orderId}</strong> sme prijali a platbu kartou potvrdili. Tovar expedujeme z externého skladu (zvyčajne 2–5 pracovných dní).` : 'Vašu platbu kartou sme úspešne prijali. Ďakujeme za objednávku.' }));
+      ok.appendChild(el('a', { href: 'index.html', class: 'btn btn-primary', text: 'Späť na úvod', style: 'margin-top:18px' }));
+      root.appendChild(ok);
+      window.scrollTo({ top: 0 });
+      return;
+    }
+    if (platba === 'zrusena') {
+      flashToast('Platba bola zrušená. Vaš košík zôstal zachovaný — môžete to skúsiť znova.');
+      // odstránime parameter z URL, aby sa toast neopakoval pri obnovení
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState({}, '', window.location.pathname);
+      }
+    }
+
     function paint() {
       root.innerHTML = '';
       if (App.cart.length === 0) {
@@ -686,12 +714,48 @@
         });
       });
 
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const data = Object.fromEntries(new FormData(form));
         if (!data.terms) { flashToast('Potvrďte prosím obchodné podmienky.'); return; }
+
+        // Platba kartou → Stripe Checkout cez Netlify funkciu
+        if ((data.payment || 'revolut') === 'card') {
+          await startCardPayment(data, form);
+          return;
+        }
         renderOrderConfirmation(data);
       });
+    }
+
+    // Spustí platbu kartou: vytvorí Stripe Checkout Session a presmeruje zákazníka.
+    async function startCardPayment(data, form) {
+      const orderId = 'GT-' + new Date().toISOString().slice(0,10).replace(/-/g,'') + '-' + Math.floor(Math.random()*9000+1000);
+      const btn = form.querySelector('button[type="submit"]');
+      const origLabel = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Presmerovávam na platbu…'; }
+      try {
+        const res = await fetch(CHECKOUT_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            cart: App.cart.map((l) => ({ id: l.id, qty: l.qty })),
+            shipping: data.shipping || 'gls',
+            email: data.email || '',
+            orderId,
+          }),
+        });
+        const out = await res.json().catch(() => ({}));
+        if (!res.ok || !out.url) {
+          throw new Error(out.error || ('HTTP ' + res.status));
+        }
+        // Číslo objednávky uchováme pre návratovú stránku.
+        try { sessionStorage.setItem('gt_last_order', orderId); } catch (e) {}
+        window.location.href = out.url;
+      } catch (err) {
+        if (btn) { btn.disabled = false; btn.textContent = origLabel; }
+        flashToast('Platbu kartou sa nepodarilo spustiť: ' + (err && err.message ? err.message : 'skúste znova alebo zvoľte iný spôsob platby.'));
+      }
     }
 
     function renderOrderConfirmation(data) {

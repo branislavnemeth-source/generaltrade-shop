@@ -1,0 +1,1 @@
+Generaltrade Shop — platobná brána (Netlify Functions). Web beží na https://generaltrade.shop

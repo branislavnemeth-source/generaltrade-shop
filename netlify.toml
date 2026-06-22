@@ -1,0 +1,17 @@
+# Netlify konfigurácia — hostuje len serverless funkciu platobnej brány.
+# E-shop samotný beží na Hostingeri (generaltrade.shop), tu sa nedeployuje web.
+
+[build]
+  # Žiadny build webu — Netlify len nainštaluje závislosti funkcií a nasadí ich.
+  command = "echo 'No site build — functions only'"
+  publish = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Pekná adresa endpointu: /api/create-checkout
+[[redirects]]
+  from = "/api/create-checkout"
+  to = "/.netlify/functions/create-checkout"
+  status = 200
